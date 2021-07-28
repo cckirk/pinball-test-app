@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  # has_secure_password
   # before_action :authenticate_user, except: :create
-  # has_many :posts
 
   def create
     user = User.new(
@@ -17,10 +15,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    response = HTTP.get("https://pinballmap.com/api/v1/region/ca-central/locations.json")
-    render json: response.parse()
-  end
 
 
 end
