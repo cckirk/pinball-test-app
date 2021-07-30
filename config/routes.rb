@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   get "/posts" => "posts#index"
 
   get "/regions" => "regions#index"
+  get "/regions/:id" => "regions#show"
+
+  get "/locations" => "locations#index"
+
+  post "/sessions" => "sessions#create"
+
 end
