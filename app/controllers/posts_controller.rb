@@ -25,6 +25,6 @@ class PostsController < ApplicationController
     the_id = params[:id]
     post = Post.find_by(id: the_id)
     post.destroy
-    render json: post.as_json && {message: "You just deleted this post"
+    render json: post.as_json && {message: "You just deleted this post"}
   end
 end

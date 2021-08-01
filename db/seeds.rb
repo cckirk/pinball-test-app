@@ -16,7 +16,7 @@ user_names.each do |user_name|
   user.save!
 end
 # # Posts
-posts.create!(comment: "Great machine, very fun", high_score: 2200, user_id: 1, address: "1005 Hemphill Ave NW, Atlanta, GA 30318", machine_name: "Star Trek(Pro)", machine_id: 1)
+post.create!(comment: "Great machine, very fun", high_score: 2200, user_id: 1, address: "1005 Hemphill Ave NW, Atlanta, GA 30318", machine_name: "Star Trek(Pro)", machine_id: 1)
 
 # # Machine
 machines.create!(manufacturer: "homepin", high_score:3000, machine_id: 1, machine_name: "Star Trek(Pro)")
