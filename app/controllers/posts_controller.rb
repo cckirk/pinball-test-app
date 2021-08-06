@@ -1,24 +1,29 @@
 class PostsController < ApplicationController
-  belongs_to :user
+  before_action :authenticate_user, except: [:index, :show]
   def create
-    post = Post.new(
+    @post = Post.new(
       title: params[:title],
       comment: params[:comment],
       high_score: params[:high_score],
       address: params[:address],
       user_id: current_user.id,
     )
+    if @post.save
+      render json: @post.as_json
+    else
+      render json: @post.as_json
+    end
   end
 
   def index
-    @posts = Posts.all
+    @posts = Post.all
     render "index.json.jbuilder"
   end
 
   def show
     the_id = params[:id]
     post = Post.find_by(id: the_id)
-    render json: post
+    render json: post.as
   end
 
   def destroy
