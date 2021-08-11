@@ -17,13 +17,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    render "index.json.jbuilder"
+    render json: @posts.as_json
   end
 
   def show
     the_id = params[:id]
     post = Post.find_by(id: the_id)
-    render json: post.as
+    render json: post.as_json
   end
 
   def destroy
