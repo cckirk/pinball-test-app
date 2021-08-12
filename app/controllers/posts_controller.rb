@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    the_id = params[:id]
+    the_id = params[:id] 
     post = Post.find_by(id: the_id)
     render json: post.as_json
   end
