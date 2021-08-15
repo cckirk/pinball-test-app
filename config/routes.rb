@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post "/posts" => "posts#create"
   get "/posts" => "posts#index"
+  get "/posts/:id" => "posts#show"
   delete "/posts/:id" => "posts#destroy"
 
   get "/regions" => "regions#index"
