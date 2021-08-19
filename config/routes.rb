@@ -16,4 +16,10 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
+  get "/favorites/locations" => "favorites#indexFavoriteLocations"
+  get "/favorites/posts" => "favorites#indexFavoritePosts"
+  post "/favorites/posts" => "favorites#createFavoritePost"
+  post "/favorites/locations" => "favorites#createFavoriteLocation"
+  post "/favorites/:id" => "favorites#destroy"
+
 end
